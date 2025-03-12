@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  aws-ip-manager:
+    build: .
+    container_name: aws-ip-manager
+    ports:
+      - "8080:8080"
+    volumes:
+      - aws-ip-data:/data
+    restart: unless-stopped
+    environment:
+      - TZ=Asia/Shanghai
+
+volumes:
+  aws-ip-data: 
